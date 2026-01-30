@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garden Plants Nursery & Landscaping Pattoki</title>
+
+    <style>
+        /* =========================
+       BASIC RESET & BODY
+       ========================= */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            background-color: #f4f9f4;
+            /* Soft green background */
+            color: #333;
+            line-height: 1.6;
+        }
+        /* =========================
+       HEADER / NAVBAR
+       ========================= */
+        
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .nav-links a:hover {
+            color: #2e7d32;
+        }
+        /* =========================
+       HERO SECTION
+       ========================= */
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('images/outdoor.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 90px 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 760px;
+            margin: auto;
+        }
+        /* =========================
+       CONTACT BAR
+       ========================= */
+        
+        .contact-bar {
+            background: #1b5e20;
+            color: #fff;
+            text-align: center;
+            padding: 12px 10px;
+            font-size: 14px;
+        }
+        
+        .contact-bar a {
+            color: #fff;
+            margin: 0 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* =========================
+       SECTION WRAPPER
+       ========================= */
+        
+        .section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .section h2 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+        /* =========================
+       PRODUCT GRID
+       ========================= */
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        /* =========================
+       PRODUCT CARD
+       ========================= */
+        
+        .product-card {
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            /* Needed for badge positioning */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeUp 0.6s ease;
+            /* Smooth classy animation */
+        }
+        
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+        }
+        /* Fade-up animation */
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .product-card h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+        
+        .product-card p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        /* Price text (optional) */
+        
+        .price {
+            font-weight: bold;
+            color: #1b5e20;
+            margin-bottom: 12px;
+        }
+        /* =========================
+       BEST SELLER BADGE
+       ========================= */
+        
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #ff9800;
+            color: #fff;
+            padding: 6px 10px;
+            font-size: 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        /* =========================
+       WHATSAPP BUTTON
+       ========================= */
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25d366;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #1ebe5d;
+        }
+        /* =========================
+       GALLERY SECTION
+       ========================= */
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* =========================
+       FOOTER
+       ========================= */
+        
+        footer {
+            background: #1b5e20;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+        
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/923249709556?text=Hello%20I%20want%20to%20order%20plants" target="_blank" style="
+   position:fixed;
+   bottom:20px;
+   right:20px;
+   background:#25d366;
+   color:white;
+   padding:14px 18px;
+   border-radius:50%;
+   font-size:22px;
+   z-index:999;
+   text-align:center;
+   ">
+💬
+</a>
+
+<!-- CALL BUTTON -->
+<a href="tel:03249709556" style="
+   position:fixed;
+   bottom:90px;
+   right:20px;
+   background:#1e7f4d;
+   color:white;
+   padding:14px 18px;
+   border-radius:50%;
+   font-size:22px;
+   z-index:999;
+   text-align:center;
+   ">
+📞
+</a>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
+            <div class="logo">Garden Plants Nursery</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="indoor.html">Indoor Plants</a>
+                <a href="Outdoor Plants.html">Outdoor Plants</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Garden Plants Nursery & Landscaping Pattoki</h1>
+        <p>Indoor, outdoor, flowering & landscaping plants – high quality & best prices.</p>
+    </section>
+
+    <!-- CONTACT BAR -->
+    <div class="contact-bar" id="contact">
+        📞 0324-9709556 | ✉️ gardenplantsnurseryfarm@gmail.com |
+        <a href="https://wa.me/923249709556" target="_blank">WhatsApp</a>
+        <a href="https://www.facebook.com/share/1HH2WhpA8W/?mibextid=wwXIfr" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/khuramshazad03" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@gardenplants30" target="_blank">TikTok</a>
+    </div>
+
+    <!-- SHOP SECTION -->
+    <section class="section" id="shop">
+        <h2>Best Selling Plants</h2>
+
+        <div class="product-grid">
+
+            <!-- Snake Plant (Best Seller) -->
+            <div class="product-card">
+                <div class="badge">⭐ Best Seller</div>
+                <img src="images/snake-plant.jpeg" alt="Snake Plant">
+                <h3>Snake Plant</h3>
+                <p>Monthly most selling indoor plant. Very easy to care.</p>
+                <div class="price">Price: Contact for latest rate</div>
+                <a class="whatsapp-btn" href="https://wa.me/923249709556?text=Hello%2C%20I%20want%20to%20order%20Snake%20Plant%20from%20Garden%20Plants%20Nursery" target="_blank">Order on WhatsApp</a>
+            </div>
+
+            <!-- Areca Palm -->
+            <div class="product-card">
+                <img src="images/areca.jpeg" alt="Areca Palm">
+                <h3>Areca Palm</h3>
+                <p>High-demand indoor & outdoor palm plant.</p>
+                <div class="price">Price: Contact for latest rate</div>
+                <a class="whatsapp-btn" href="https://wa.me/923249709556?text=Hello%2C%20I%20want%20to%20order%20Areca%20Palm%20from%20Garden%20Plants%20Nursery" target="_blank">Order on WhatsApp</a>
+            </div>
+
+            <!-- Flowering Plant -->
+            <div class="product-card">
+                <img src="images/flower.jpeg" alt="Flowering Plant">
+                <h3>Flowering Pot Plant</h3>
+                <p>Beautiful flowering plants for gardens & lawns.</p>
+                <div class="price">Price: Contact for latest rate</div>
+                <a class="whatsapp-btn" href="https://wa.me/923249709556?text=Hello%2C%20I%20want%20to%20order%20Flowering%20Plant%20from%20Garden%20Plants%20Nursery" target="_blank">Order on WhatsApp</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="section" id="gallery">
+        <h2>Plants Gallery</h2>
+        <div class="gallery">
+            <img src="images/money-plant.jpeg" alt="Indoor Plant">
+            <img src="images/outdoor.jpeg" alt="Outdoor Plant">
+            <img src="images/flower.jpeg" alt="Flowering Plant">
+            <img src="images/indoor2.jpeg" alt="Indoor Plant 2">
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Garden Plants Nursery & Landscaping Pattoki</p>
+        <p>Email: <a href="mailto:gardenplantsnurseryfarm@gmail.com">gardenplantsnurseryfarm@gmail.com</a></p>
+    </footer>
+
+</body>
+
+</html>
